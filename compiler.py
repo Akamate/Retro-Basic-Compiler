@@ -1,5 +1,5 @@
 import string
-file = open("t.txt", "r")
+file = open("input.txt", "r")
 grm = []
 bcode = []
 
