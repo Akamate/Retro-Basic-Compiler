@@ -237,3 +237,4 @@ for a in bcode:
     file.write(str(a))
     file.write(" ")
 print("see output.txt file.")
+file.close()
