@@ -1,5 +1,6 @@
 import string
-file = open("input.txt", "r")
+
+# initial global variables
 grm = []
 bcode = []
 
@@ -217,24 +218,27 @@ def state10(i, j):  # if goto
         print("error")
         exit(1)
 
+if __name__ == "__main__":
+    # open input file
+    file = open("input.txt", "r")
+    
+    # scanner
+    for line in file:
+        grm += [line.strip().split(" ")]
 
-# scanner
-for line in file:
-    grm += [line.strip().split(" ")]
+    # parsing and grammar check
+    for i in range(len(grm)):
+        grm[i].append("eol")
+      #  print(grm[i])
+        if(grm[i][0].isdigit):
+            state1(i, 1)
+    print(bcode)
 
-# parsing and grammar check
-for i in range(len(grm)):
-    grm[i].append("eol")
-  #  print(grm[i])
-    if(grm[i][0].isdigit):
-        state1(i, 1)
-print(bcode)
+    file.close()
 
-file.close()
-
-file = open("./output.txt", "w")
-for a in bcode:
-    file.write(str(a))
-    file.write(" ")
-print("see output.txt file.")
-file.close()
+    file = open("./output.txt", "w")
+    for a in bcode:
+        file.write(str(a))
+        file.write(" ")
+    print("see output.txt file.")
+    file.close()
